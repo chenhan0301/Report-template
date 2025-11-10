@@ -19,7 +19,7 @@
       <div class="cover-meta">
         <div><b>報告編號</b><span id="reportId">CL2449</span></div>
         <div><b>生成日期</b><span id="generatedAt"></span></div>
-        <div><b>報告版本</b><span>v4.2</span></div>
+        <div><b>報告版本</b><span>v11.03</span></div>
       </div>
     </div>
   </section>
@@ -29,113 +29,111 @@
       <h2 id="titleText">LexiAI - AI面試語言解碼</h2>
     </div>
     <div class="actions">
-      <button id="exportPdfBtn" class="btn primary">📄 匯出 PDF</button>
+      <button id="exportPdfBtn" class="btn primary">匯出 PDF</button>
     </div>
   </header>
 
-  <nav class="sidenav reveal">
-    <h3>📘 章節目錄</h3>
-    <a href="#exec">基本資料</a>
-    <a href="#kpi">KPI 指標</a>
-    <a href="#dashboard">儀表板總覽</a>
-    <a href="#g1">回答完整性</a>
-    <a href="#g2">內容品質</a>
-    <a href="#g3">整體優劣</a>
-    <a href="#g4">性格分析</a>
-    <a href="#g5">溝通技巧</a>
-    <a href="#g6">整體建議</a>
-  </nav>
+  <div class="content-wrapper">
+    <nav class="sidenav reveal">
+      <h3>📘 章節目錄</h3>
+      <a href="#exec">基本資料</a>
+      <a href="#kpi">KPI 指標</a>
+      <a href="#dashboard">儀表板總覽</a>
+      <a href="#g6">整體建議</a>
+      <a href="#g1">回答完整性</a>
+      <a href="#g2">內容品質</a>
+      <a href="#g3">整體優劣</a>
+      <a href="#g4">性格分析</a>
+      <a href="#g5">溝通技巧</a>
+    </nav>
 
-  <main id="reportRoot">
-    <section id="exec" class="container glass reveal">
-      <h2 class="section-title">基本資料</h2>
-      <div class="card">
-        <p><span class="label">應徵職位：</span><span id="position">—</span></p>
-        <p><span class="label">面試代號：</span><span id="interviewId">—</span></p>
-      </div>
-    </section>
-
-    <section id="kpi" class="container reveal">
-      <h2 class="section-title">KPI 指標摘要</h2>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <p class="label">整體適任性</p>
-          <p id="kpiOverall" class="score">—</p>
-          <p id="kpiOverallDesc" class="desc">—</p>
-        </div>
-        <div class="kpi-card">
-          <p class="label">溝通與邏輯性</p>
-          <p id="kpiComm" class="score">—</p>
-          <p id="kpiCommDesc" class="desc">—</p>
-        </div>
-        <div class="kpi-card">
-          <p class="label">職位匹配度</p>
-          <p id="kpiMatch" class="score">—</p>
-          <p id="kpiMatchDesc" class="desc">—</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="dashboard" class="container page-break reveal">
-      <h2 class="section-title">儀表板總覽（Charts Overview）</h2>
-      <div class="grid-2">
+    <main id="reportRoot">
+      <section id="exec" class="container glass reveal" style="margin-top: 0;">
+        <h2 class="section-title">基本資料</h2>
         <div class="card">
-          <h3>各面向比較（Bar）</h3>
-          <canvas id="barChart"></canvas>
+          <p><span class="label">應徵職位：</span><span id="position">—</span></p>
+          <p><span class="label">面試代號：</span><span id="interviewId">—</span></p>
         </div>
-        <div class="card">
-          <h3>潛能 × 表現（Heatmap Matrix）</h3>
-          <canvas id="nineBoxChart"></canvas>
+      </section>
+
+      <section id="kpi" class="container reveal">
+        <h2 class="section-title">KPI 指標摘要</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <p class="label">整體適任性</p>
+            <p id="kpiOverall" class="score">—</p>
+            <p id="kpiOverallDesc" class="desc">—</p>
+          </div>
+          <div class="kpi-card">
+            <p class="label">溝通與邏輯性</p>
+            <p id="kpiComm" class="score">—</p>
+            <p id="kpiCommDesc" class="desc">—</p>
+          </div>
+          <div class="kpi-card">
+            <p class="label">職位匹配度</p>
+            <p id="kpiMatch" class="score">—</p>
+            <p id="kpiMatchDesc" class="desc">—</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <h3>人格雷達圖（Radar）</h3>
-        <canvas id="radarChart"></canvas>
-      </div>
-    </section>
+      </section>
 
-    <section id="g1" class="container reveal">
-      <h2 class="section-title">目標一｜回答完整性分析</h2>
-      <div id="g1content" class="smooth-toggle"></div>
-    </section>
-
-    <section id="g2" class="container reveal">
-      <h2 class="section-title">目標二｜回答內容品質</h2>
-      <div id="g2content" class="smooth-toggle"></div>
-    </section>
-
-    <section id="g3" class="container reveal">
-      <h2 class="section-title">目標三｜整體優劣與追問建議</h2>
-      <div class="grid-2">
-        <div>
-          <h3>優勢</h3><div id="g3優勢" class="smooth-toggle"></div>
+      <section id="dashboard" class="container page-break reveal">
+        <h2 class="section-title">儀表板總覽</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>各面向比較</h3>
+            <canvas id="barChart"></canvas>
+          </div>
+          <div class="card">
+            <h3>人格雷達圖</h3>
+            <canvas id="radarChart"></canvas>
+          </div>
         </div>
-        <div>
-          <h3>不足</h3><div id="g3不足" class="smooth-toggle"></div>
+      </section>
+
+      <section id="g6" class="container page-break reveal">
+        <h2 class="section-title">整體適任性與發展建議</h2>
+        <div id="g6content" class="smooth-toggle"></div>
+      </section>
+
+      <section id="g1" class="container reveal">
+        <h2 class="section-title">目標一｜回答完整性分析</h2>
+        <div id="g1content" class="smooth-toggle"></div>
+      </section>
+
+      <section id="g2" class="container reveal">
+        <h2 class="section-title">目標二｜回答內容品質</h2>
+        <div id="g2content" class="smooth-toggle"></div>
+      </section>
+
+      <section id="g3" class="container reveal">
+        <h2 class="section-title">目標三｜整體優劣與追問建議</h2>
+        <div class="grid-2">
+          <div>
+            <h3>優勢</h3><div id="g3優勢" class="smooth-toggle"></div>
+          </div>
+          <div>
+            <h3>不足</h3><div id="g3不足" class="smooth-toggle"></div>
+          </div>
         </div>
-      </div>
-      <h3>追問建議</h3><div id="g3追問建議" class="smooth-toggle"></div>
-    </section>
+        <h3>追問建議</h3><div id="g3追問建議" class="smooth-toggle"></div>
+      </section>
 
-    <section id="g4" class="container reveal">
-      <h2 class="section-title">目標四｜性格與特質分析</h2>
-      <div id="g4traits" class="grid-3 smooth-toggle"></div>
-    </section>
+      <section id="g4" class="container reveal">
+        <h2 class="section-title">目標四｜性格與特質分析</h2>
+        <div id="g4traits" class="grid-3 smooth-toggle"></div>
+      </section>
 
-    <section id="g5" class="container reveal">
-      <h2 class="section-title">目標五｜溝通技巧分析</h2>
-      <p><b>評分：</b><span id="g5評分"></span></p>
-      <p><b>核心涵義：</b><span id="g5核心涵義" class="longtext"></span></p>
-      <p><b>行為觀察：</b><span id="g5行為觀察" class="longtext"></span></p>
-      <p><b>職位影響與風險：</b><span id="g5職位影響與風險" class="longtext"></span></p>
-      <p><b>證據：</b><span id="g5證據" class="longtext"></span></p>
-    </section>
-
-    <section id="g6" class="container page-break reveal">
-      <h2 class="section-title">目標六｜整體適任性與發展建議</h2>
-      <div id="g6content" class="smooth-toggle"></div>
-    </section>
-  </main>
+      <section id="g5" class="container reveal">
+        <h2 class="section-title">目標五｜溝通技巧分析</h2>
+        <p><b>評分：</b><span id="g5評分"></span></p>
+        <p><b>核心涵義：</b><span id="g5核心涵義" class="longtext"></span></p>
+        <p><b>行為觀察：</b><span id="g5行為觀察" class="longtext"></span></p>
+        <p><b>職位影響與風險：</b><span id="g5職位影響與風險" class="longtext"></span></p>
+        <p><b>證據：</b><span id="g5證據" class="longtext"></span></p>
+      </section>
+    </main>
+  </div>
 
   <footer id="pdfFooter">
     <span id="pdfPageCounter"></span>
